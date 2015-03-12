@@ -13,11 +13,11 @@ class AlbumController extends Controller {
     /**
      * @return \Illuminate\View\View
      */
-//    public function index() //index
-//    {
-//        $albums = Album::with('photos')->get();
-//        return view('index', compact('albums'));
-//    }
+    public function index() //index
+    {
+        $albums = Album::with('photos')->get();
+        return view('index', compact('albums'));
+    }
 
     /**
      * @param $id
@@ -26,19 +26,20 @@ class AlbumController extends Controller {
      * album model has_many function 'photos' find through id
      * return to the view 'album' through compact variables 'album', 'albums'
      */
-//    public function getAlbum($id) //show
-//    {
-//
-//        $albums = Album::with('photos')->get();
-//        $album = Album::with('photos')->find($id);
-//        return view('album', compact('album', 'albums'));
-//
-//    }
+    public function getAlbum($id) //show
+    {
+
+        $albums = Album::with('photos')->get();
+        $album = Album::with('photos')->find($id);
+        return view('album', compact('album', 'albums'));
+
+    }
 
     /**
      * @return \Illuminate\View\View
      */
-    public function create(){
+    public function getCreate()
+    {
 
         return view('createalbum');
     }
